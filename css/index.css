@@ -1,0 +1,55 @@
+:root {
+	--color-light-green: rgba(124, 181, 124, 0.289);
+	--color-medium-green: rgb(179, 206, 179);
+	--color-dark-green: rgb(0, 48, 0);
+	--color-dark: #a1a1a1;
+	--color-unaccent: #808080;
+	--color-transparent: transparent;
+	--color-error-light: #f26b6b;
+	--color-error-dark: #d65c5c;
+
+	--spacing-small: 5px;
+	--spacing-medium: 15px;
+	--spacing-large: 30px;
+
+	--border1: 1px solid rgb(0, 44, 0);
+	--border2: 3px solid rgb(0, 44, 0);
+	--border-radius: 3px;
+	--box-shadow: 
+		0 16px 24px 2px rgba(33,37,41,.02), 
+		0 6px 30px 5px rgba(33,37,41,.04), 
+		0 8px 10px -5px rgba(33,37,41,.1);
+}
+
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	/* line-height: 1.2; */
+	background-color: var(--color-light-green);
+}
+
+.footer {
+	padding-top: 10px;
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	background-color: var(--color-dark-green);
+	color: white;
+	text-align: center;
+	bottom: 0;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-dark);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--color-white);
+}

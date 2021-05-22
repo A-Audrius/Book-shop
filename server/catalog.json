@@ -1,0 +1,72 @@
+[
+    {
+        "id": "el1",
+        "author": "Clarissa Pinkola Estes",
+        "title": "Bėgančios su vilkais",
+        "img": "https://i.ibb.co/zx0xfLF/begancios-su-vilkais.jpg",
+        "price": 13.99
+    },
+    {
+        "id": "el2",
+        "author": "Lev Tolstoj",
+        "title": "Uždraustasis Tolstojus",
+        "img": "https://i.ibb.co/LYSyb0M/uzdraustasis-tolstojus.jpg",
+        "price": 6.99
+    },
+    {
+        "id": "el3",
+        "author": "Kristina Pišniukaitė",
+        "title": "Ant medinės lentelės",
+        "img": "https://i.ibb.co/FH1RRYT/ant-medines-lenteles.webp",
+        "price": 11.99
+    },
+    {
+        "id": "el4",
+        "author": "Lina Limantaitė",
+        "title": "Italų-lietuvių lietuvių-italų kalbų žodynas",
+        "img": "https://i.ibb.co/51yfP7t/italu-lietuviu-lietuviu-italu-kalbu-zodynas.jpg",
+        "price": 10.99
+    },
+    {
+        "id": "el5",
+        "author": "Tomas Dirgėla",
+        "title": "Užkeiktoji pono Kuko knyga",
+        "img": "https://i.ibb.co/KGCp0f7/uzkeiktoji-pono-kuko-knyga.jpg",
+        "price": 14500
+    },
+    {
+        "id": "el6",
+        "author": "George Orwell",
+        "title": "1984-ieji",
+        "img": "https://i.ibb.co/VNqtR2y/1984-ieji.jpg",
+        "price": 7.49
+    },
+    {
+        "id": "el7",
+        "author": "Alyson Richman",
+        "title": "Prarasta žmona",
+        "img": "https://i.ibb.co/By8qwkW/Prarasta-zmona.jpg",
+        "price": 10.99
+    },
+    {
+        "id": "el8",
+        "author": "Rytis Daukantas",
+        "title": "Domas ir Tomas. Spalvinimo knygelė",
+        "img": "https://i.ibb.co/Rvrs6Pj/domas-ir-tomas-spalvinimo-knygele.jpg",
+        "price": 10.99
+    },
+    {
+        "id": "el9",
+        "author": "Kristina Sabaliauskaitė",
+        "title": "PETRO IMPERATORĖ II: antroji dilogijos knyga",
+        "img": "https://i.ibb.co/pJKRYgw/sabaliauskaite-petro-imperatore-ii-72max.jpg",
+        "price": 10.79
+    },
+    {
+        "id": "el10",
+        "author": "Nėra autoriaus",
+        "title": "Mokykis programuoti",
+        "img": "https://i.ibb.co/YPk62ND/coderdojo-mokykis-programuoti-p1.jpg",
+        "price": 6.49
+    }
+]

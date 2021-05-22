@@ -1,0 +1,16 @@
+.ShopCart-container {
+    display: flex;
+    height: 130px;
+    padding: var(--spacing-small);
+    /* background-color: var(--color-medium);
+    border-bottom: var(--color-dark-green) solid 5px; */
+}
+.ShopCart-counter {
+    margin-left: auto;
+    padding-right: var(--spacing-small);
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    color: var(--color-dark-green);
+}
+
