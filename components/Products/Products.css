@@ -16,7 +16,6 @@
 	
 }
 .slider-line {
-    /* width: 300px; */
     display: flex;
     position: relative;
     transition: all ease 1s;
@@ -102,8 +101,6 @@
 	grid-gap: 10px;
 	margin: 0;
 	margin-bottom: 20px;
-	/* overflow: auto; */
-	/* width: 300px; */
 	}
 	.products-slider {
 	width: 300px;
@@ -146,7 +143,6 @@
 		margin-left: 1%;
 		margin-right: 1%;
 		overflow: auto;
-		/* margin-right: 1%; */
 	}
 
 }
