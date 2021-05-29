@@ -5,57 +5,84 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Books Shop</title>
 	<link rel="icon" type="image/png" href="img/favicon.png">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-	rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-	crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"crossorigin="anonymous">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
-	integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
-	crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" 
-	integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" 
-	crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	
 </head>
+	
 <body>
 
+
+
+
 	<!-- HEADER -->
-	<div class="header-container" id="header">
+<section class="header-container" id="header">
 		
 	<div class="topnav">
 		<h1>KNYGYNAS</h1>
-		<div class="dropdown">
-			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-				Prisijungti 
-			</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-					<li><a class="dropdown-item" href="#">Prisijungti</a></li>
-					<li><a class="dropdown-item" href="#">Sukurti paskyrą</a></li>
-				</ul>
-				</div>
 		<div class="search-container">
-		  <form class="form" action="/action_page.php">
-			<input class="input-search" type="text" id="myInput" onkeyup="myFunction()" placeholder="Ieškoti pagal autorių, pavadinimą..." title="Type in a name">
-			<button type="submit"><i class="fa fa-search"></i></button>
+		  <form class="form"  >
+			<input class="input-search" type="text" id="myInput"  placeholder="Ieškoti pagal autorių, pavadinimą..." title="Type in a name">
+			<button onclick="document.getElementById('myInput')"  type="submit"><i class="fa fa-search"></i></button>
 		  </form>
 		</div>
-		
+
+		<div class="log">
+			<button class="btn btn-secondary" onclick="document.getElementById('id01').style.display='block'"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				Prisijungti 
+			</button>
+		</div>
 	</div>
+
 	
-			
-			<section id="ShopCart"></section>
+	
+	<!-- SIGNUP FORM -->
+
+	<div id="id01" class="modal">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+			<!-- <form role="form" onsubmit="signUp(event);">	 -->
+
+
+			<div class="container">
+				<form role="form" onsubmit="signUp(event);">
+					<div class="form-group">
+						<input type="text" name="username" id="username" placeholder="User Name" required>
+					</div>
+					<div class="form-group">
+						<input type="password" name="pwd" id="pwd" placeholder="Password" required>
+					</div>
+					<div class="form-group">
+						<button type="submit">Sign Up</button>
+					</div>
+				</form>					
+			</div>
 	</div>
 
-	<!--  -->
+
+			<div id="login"></div>
+			<!-- <div class="log-out">Atsijungti</div> -->
+	<!-- SHOP CART -->
+			<div id="ShopCart"></div>
+
+	<div id="output"></div>
+		<!-- DISPLAY USERS DATA -->
+</section>
 
 
-	<div class="line"></div>
 
 
-<!-- PRODUCTS -->
-			<button class="slider-prev">◁</button>
-			<button class="slider-next">▷</button>
+
+	<!--PRODUCTS  -->
+<!-- SLIDER -->
+
+<div class="container">
+
+		<button class="slider-prev">◁</button>
+		<button class="slider-next">▷</button>
 
 	<div class="products-slider">	
 		<div class="slider-line">
@@ -63,18 +90,15 @@
 		</div>
 	</div>
 
-	<div class="products-slider">
-		<div class="slider-line">
+</div>
 
-		</div>
-	</div>
 
 	
 		<div id="shopping"></div>
 		<div id="spinner"></div>
 		<div id="error"></div>
 	
-
+<!-- FOOTER -->
 	<footer>
 		<div class="footer">
        		 &copy; Audrius Adomavičius
@@ -111,7 +135,6 @@
     <link rel="stylesheet" href="components/Error/Error.css"> 
 
 	<script src="index.js"></script>
-
 
 
 

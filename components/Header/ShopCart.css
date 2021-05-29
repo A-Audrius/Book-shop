@@ -2,8 +2,7 @@
     display: flex;
     height: 130px;
     padding: var(--spacing-small);
-    /* background-color: var(--color-medium);
-    border-bottom: var(--color-dark-green) solid 5px; */
+    background-color: var(--color-medium);
 }
 .ShopCart-counter {
     margin-left: auto;
@@ -13,4 +12,11 @@
     text-align: center;
     color: var(--color-dark-green);
 }
-
+#shop-cart-img {
+    height: 80px;
+}
+@media screen and (max-width: 600px) {
+    .ShopCart-container {
+        margin-top: 90%;
+    }
+}

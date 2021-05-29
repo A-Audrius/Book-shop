@@ -5,7 +5,7 @@ class Products {
         this.labelRemove = 'Išimti iš krepšelio';
     }
 
-    handlerSetLocatStorage(element, id) {
+    handlerSetLocalStorage(element, id) {
         const { pushProduct, products } = localStorageUtil.putProducts(id);
 
         if (pushProduct) {
@@ -37,12 +37,12 @@ class Products {
             htmlCatalog += `
                 <li class="products-element">
                     <span class="products-element__author">${author}</span>
-                    <span class="products-element__title">${title}</>
+                    <span class="products-element__title">${title}</span>
                     <img class="products-element__img" src="${img}" />
                     <span class="products-element__price">
                          📚 ${price.toLocaleString()} €
                     </span>
-                    <button class="products-element__btn${activeClass}" onclick="productsPage.handlerSetLocatStorage(this, '${id}');">
+                    <button class="products-element__btn${activeClass}" onclick="productsPage.handlerSetLocalStorage(this, '${id}');">
                         ${activeText}
                     </button>
                 </li>
@@ -50,7 +50,7 @@ class Products {
         });
 
         const html = `
-            <ul class="products-container">
+            <ul id="myList" class="products-container">
                 ${htmlCatalog}
             </ul>
         `;
@@ -61,39 +61,58 @@ class Products {
 const productsPage = new Products();
 
 
-// FILTER
+// FILTER-SEARCH
 
-function myFunction() {
-    var input, filter, ul, li, span, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.querySelector(".products-container");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        span = li[i].getElementsByTagName("span")[0];
-        txtValue = span.textContent || span.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
+$(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myList li").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  
 
 
 
 
 // SLIDER
 
-const images = document.querySelectorAll('.products-slider .slider-line');
+
+// let offset = 0;
+// let products = document.getElementById('products');
+// const sliderLine = document.querySelector('.slider-line');
+
+// document.querySelector('.slider-next').addEventListener('click', function(){
+//     offset += 310;
+//     if (offset > products.length) {
+//         offset = 0;
+//     }
+//     sliderLine.style.left = offset + 'px';
+// });
+
+// document.querySelector('.slider-prev').addEventListener('click', function () {
+//     offset += 310;
+//     if (offset <= 0) {
+//         offset = products.length;
+//     }
+//     sliderLine.style.left = -offset + 'px';
+// });
+
+// 2
+
+
+
+
+const card = document.querySelectorAll('.products-slider .slider-line');
 const sliderLine = document.querySelector('.products-slider .slider-line');
 let count = 0;
 let width;
 
 function init() {
-    width = document.querySelector('.products-slider').offsetWidth;
-    sliderLine.style.width = width * images.length + 'px';
-    images.forEach(item => {
+    width = 310;
+    sliderLine.style.width = width * card.length + 'px';
+    card.forEach(item => {
         item.style.width = width + 'px';
         item.style.height = 'auto';
     });
@@ -105,7 +124,7 @@ window.addEventListener('resize', init);
 
 document.querySelector('.slider-next').addEventListener('click', function () {
     count++;
-    if (count > images) {
+    if (count > card) {
         count = 1;
     }
     rollSlider();
@@ -113,8 +132,8 @@ document.querySelector('.slider-next').addEventListener('click', function () {
 
 document.querySelector('.slider-prev').addEventListener('click', function () {
     count--;
-    if (count < 0) {
-        count = images.length - 1;
+    if (count > 0) {
+        count = card.length - 1;
     }
     rollSlider();
 });
@@ -123,6 +142,5 @@ function rollSlider() {
     sliderLine.style.transform = 'translate(-' + count * width + 'px)';
 
 }
-
 
 
