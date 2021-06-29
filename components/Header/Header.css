@@ -2,9 +2,10 @@
   display: flex;
   height: 130px;
   background-color: var(--color-medium-green);
-  padding: 40px 15% 0 12%;
+  padding: 40px 12% 0 12%;
   border-bottom: var(--color-dark-green) solid 5px;
   /* padding: 0; */
+ 
 }
 /* .container h1 {
   margin-left: 12%;
@@ -13,7 +14,8 @@
   overflow: hidden;
   width: 100%;
   display: flex;
-  gap: 5%;
+  /* gap: 2%; */
+  max-width: 1320px; 
 }
 .dropdown {
   margin-top: 0.8%;
@@ -22,7 +24,8 @@
   overflow: visible;
 }
 .search-container {
-    width: 85%;
+    width: 90%;
+    margin-left: 4%;
 }
 
 .topnav input[type=text] {
@@ -123,8 +126,9 @@ hr {
   display: table;
 }
 .login {
-  display: none;
+  /* display: none; */
   cursor: pointer;
+   /* display: flex; */
 }
 
 @media screen and (max-width: 600px) {
@@ -167,6 +171,10 @@ hr {
   .dropdown-item {
     overflow: auto;
   }
+  .search-container {
+    width: 100%;
+    margin-left: 0;
+}
 }
 
 

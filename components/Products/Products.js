@@ -105,13 +105,13 @@ $(document).ready(function(){
 
 
 const card = document.querySelectorAll('.products-slider .slider-line');
-const sliderLine = document.querySelector('.products-slider .slider-line');
+const sliderLine = document.querySelector('.products-slider .slider-line .products');
 let count = 0;
 let width;
 
 function init() {
     width = 310;
-    sliderLine.style.width = width * card.length + 'px';
+    sliderLine.style.width = card + 'px';
     card.forEach(item => {
         item.style.width = width + 'px';
         item.style.height = 'auto';
@@ -123,17 +123,18 @@ init();
 window.addEventListener('resize', init);
 
 document.querySelector('.slider-next').addEventListener('click', function () {
-    count++;
-    if (count > card) {
-        count = 1;
-    }
+    
+    if (count <= card.length + 4) {
+        count++;
+     } 
+    
     rollSlider();
 });
 
 document.querySelector('.slider-prev').addEventListener('click', function () {
-    count--;
-    if (count > 0) {
-        count = card.length - 1;
+    
+    if (count > 0) {    
+        count--;
     }
     rollSlider();
 });

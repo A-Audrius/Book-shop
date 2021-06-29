@@ -2,7 +2,8 @@
 .products-container {
 	display: flex;
     grid-gap: 10px;
-	margin: 2% auto;
+	margin: 1% auto;
+	top: 50%;
 	padding: 0;
 }
 .products-slider {
@@ -31,6 +32,7 @@
 	border: 1px solid rgb(0, 44, 0);
 	width: 300px;
 	height: 450px;
+	top: 50%;
 }
 .products-element__author {
 	margin: 0 auto;

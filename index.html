@@ -10,13 +10,76 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script> -->
 	
 </head>
 	
 <body>
 
 
+    <script>
+// window.onload = function () {
+        const signUp = e => {
+            let formData = {
+                userName: document.getElementById('username').value,
+                pwd: document.getElementById('pwd').value
+            }
+            localStorage.setItem('formData', JSON.stringify(formData));
+            // console.log(localStorage.getItem('formData'));
+            dispData();
+            e.preventDefault();
+        }
+
+        function dispData(){
+            console.log(localStorage.getItem('formData'));
+            let {userName, pwd} = JSON.parse(localStorage.getItem('formData'));
+            var output = document.getElementById('output');
+            output.innerHTML = `
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Prisijungta </td>
+                        <td>${userName}</td>
+                    </tr>
+                </tbody>
+            </table>`;
+        }
+        dispData();
+	// }
+
+
+// document.getElementById("dropdownMenuButton1").addEventListener("click", function() {
+// 	document.getElementById('id01').style.display='block';
+// });
+
+function removeElement() {
+	document.getElementById('id01').style.display='block';
+  document.getElementById("dropdownMenuButton1").style.display = "none"; 
+  document.getElementById("dropdownMenuButton2").style.display = "block";
+  dispData();
+}
+function removeElement1() {
+  document.getElementById("dropdownMenuButton2").style.display = "none";
+  document.getElementById("dropdownMenuButton1").style.display = "block";
+}
+
+
+
+// 
+//  var form = document.getElementById('form');
+
+// form.onsubmit = function(event) {
+// 	event.preventDefault();
+
+// 	form.reset();
+
+// 	// var username = document.getElementById('username').value;
+// 	// var password = document.getElementById('pwd').value;
+// };
+
+
+
+    </script>
 
 
 	<!-- HEADER -->
@@ -31,11 +94,15 @@
 		  </form>
 		</div>
 
-		<div class="log">
-			<button class="btn btn-secondary" onclick="document.getElementById('id01').style.display='block'"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		<div class="login">	
+			<div id="output"></div>
+			<button class="btn btn-secondary" id="dropdownMenuButton1" onclick="removeElement()">
 				Prisijungti 
 			</button>
-		</div>
+			<button class="btn btn-secondary" id="dropdownMenuButton2" style="display: none;" onclick="removeElement1()">
+				Atsijungti
+			</button>
+		</div>	
 	</div>
 
 	
@@ -44,13 +111,11 @@
 
 	<div id="id01" class="modal">
 		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-			<!-- <form role="form" onsubmit="signUp(event);">	 -->
-
-
+		
 			<div class="container">
-				<form role="form" onsubmit="signUp(event);">
+				<form action="" role="form" id="form" >
 					<div class="form-group">
-						<input type="text" name="username" id="username" placeholder="User Name" required>
+						<input type="text" name="userName" id="username" placeholder="Username" required>
 					</div>
 					<div class="form-group">
 						<input type="password" name="pwd" id="pwd" placeholder="Password" required>
@@ -58,17 +123,16 @@
 					<div class="form-group">
 						<button type="submit">Sign Up</button>
 					</div>
-				</form>					
+				</form>			
 			</div>
 	</div>
 
 
 			<div id="login"></div>
 	<!-- SHOP CART -->
-			<div id="ShopCart"></div>
+			<div id="ShopCart" class="ShopCart-container"></div>
 
-	<div id="output"></div>
-		<!-- DISPLAY USERS DATA -->
+
 </section>
 
 
@@ -92,7 +156,6 @@
 </div>
 
 
-	
 		<div id="shopping"></div>
 		<div id="spinner"></div>
 		<div id="error"></div>

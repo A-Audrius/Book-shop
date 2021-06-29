@@ -24,7 +24,7 @@
 	top: 20px;
 	padding-right: 250px;
 	margin-top: 10px;
-	width: 35px;
+	/* width: 35px; */
 	height: 35px;
 	background-image: url(img/close.svg);
 	background-repeat: no-repeat;
