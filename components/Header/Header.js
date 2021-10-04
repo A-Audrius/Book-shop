@@ -1,3 +1,5 @@
+
+// MODAL
 var modal = document.getElementById('id01');
 
 window.onclick = function(event) {
@@ -9,26 +11,27 @@ window.onclick = function(event) {
 
 //   // LOGIN
 
-// class Login {
-//   constructor () {
-//     this.classNameActive = 'login_btn_active';
-//     this.labelAdd = 'Prisijungti';
-//     this.labelRemove = 'Atsijungti';
-//   }
-//    handlerSetLocalStorage(username, pwd) {
-//      const { pushLogin, login } = localStorageUtil.putLogin(pwd);
+class Login {
+  constructor () {
+    this.classNameActive = 'login_btn_active';
+    this.labelAdd = 'Prisijungti';
+    this.labelRemove = 'Atsijungti';
+  }
+   handlerSetLocalStorage(username, pwd) {
+     const { pushLogin, login } = localStorageUtil.putLogin(pwd);
 
      
-//      if (pushLogin) {
-//       element.classList.add(this.classNameActive);
-//       element.innerText = this.labelRemove;
-//   } else {
-//       element.classList.remove(this.classNameActive);
-//       element.innerText = this.labelAdd;
-//   }
-// LoginCart.render(login);
-//    }
-// }
+     if (pushLogin) {
+      element.classList.add(this.classNameActive);
+      element.innerText = this.labelRemove;
+  } else {
+      element.classList.remove(this.classNameActive);
+      element.innerText = this.labelAdd;
+  }
+LoginCart.render(login);
+   }
+}
+
 
 class Products {
   constructor() {
@@ -88,6 +91,51 @@ const productsPage = new Products();
 
 
 
+
+// 
+const signUp = e => {
+    let formData = {
+        username: document.getElementById('username').value,
+        pwd: document.getElementById('pwd').value
+    }
+    localStorage.setItem('formData', JSON.stringify(formData));
+    console.log(localStorage.getItem('formData'));
+    dispData();
+    e.preventDefault();
+}
+
+function dispData(){
+    console.log(localStorage.getItem('formData'));
+    let {username, pwd} = JSON.parse(localStorage.getItem('formData'));
+    var output = document.getElementById('login');
+    output.innerHTML = `
+        <tbody>
+            <tr>
+                <td>Vartotojas</td>
+                <td>${username}</td>
+            </tr>             
+        </tbody>`;
+}
+dispData();
+
+
+document.getElementById("dropdownMenuButton1").addEventListener("click", function() {
+document.getElementById('id01').style.display='block';
+});
+
+function removeElement() {
+
+document.getElementById('id01').style.display='block';
+document.getElementById("dropdownMenuButton1").style.display = "none"; 
+document.getElementById("dropdownMenuButton2").style.display = "block";
+dispData();
+}
+function removeElement1() {
+localStorage.clear();
+document.getElementById('login').style.display = "none";
+document.getElementById("dropdownMenuButton2").style.display = "none";
+document.getElementById("dropdownMenuButton1").style.display = "block";
+}
 
 
 
